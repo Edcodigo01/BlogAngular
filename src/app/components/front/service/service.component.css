@@ -1,0 +1,7 @@
+.image-service {
+    width: 650px;
+    border-radius: 20px;
+    border: solid 7px var(--fucsia-l);
+    float: right;
+    margin-left: 40px;
+}

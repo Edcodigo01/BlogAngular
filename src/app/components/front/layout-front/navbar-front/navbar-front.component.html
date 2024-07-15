@@ -1,0 +1,121 @@
+<div class="navbar-front" *ngIf="!isRouteAdmin()">
+
+    <div class="container2 logo">
+        <!-- <img class="radiance2" src="assets/imagenes/default/resplandor.png" alt=""> -->
+        <div routerLink=" " class="cursor" style="height:50px;float:left;display: flex;justify-content: center;align-items:center">
+            <h1 class="text-logo show-sm mt-3">B. Montilla</h1>
+        </div>
+
+        <img class=" hide-sm" src="assets/imagenes/default/FIRMA W.png" alt="">
+        <!-- <img class="radiance" src="assets/imagenes/default/resplandor.png" alt=""> -->
+        <div class="links-header">
+            <a href="" class="link-header first hide-xxs"> <i class="fab fa-instagram" style="font-size: 120%;" aria-hidden="true"></i> <span class="hide-lg"> Belizabethmontillapsicologa</span> </a>
+            <a href="" class="link-header hide-xxs"> <i class="fab fa-facebook-square" style="font-size: 120%;" aria-hidden="true"></i> <span class="hide-lg"> Belizabeth-Montilla</span> </a>
+            <a href="" class="link-header link-whatsapp"> <i class="fab fa-whatsapp" style="font-size: 120%;"></i> <span class="hide-lg"> 097-9072010</span> </a>
+            <a data-toggle="modal" data-target="#modalMain" class="link-header foat-left show-lg ml-auto cursor"> <i class="fas fa-bars" style="font-size: 120%;"></i> <span class="hide-lg"> </span> </a>
+        </div>
+    </div>
+
+    <div class="links-footer hide-lg">
+        <a href="" class="link-nav" routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
+        <a href="" class="link-nav" routerLinkActive="active" routerLink="/sobre-mi">Sobre mí</a>
+        <a href="" class="link-nav" routerLinkActive="active" routerLink="/servicios">Servicios</a>
+        <div class="dropdown">
+            <span class="link-nav " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Blog
+                <i  style="font-size: 60%;" class="fas fa-caret-down"></i>
+
+
+            </span>
+            <div class="dropdown-menu p-0" aria-labelledby="dropdownMenuButton">
+                <a *ngFor="let category of categories" class="dropdown-item" [routerLink]="['/blog/categoria/'+category.slug]"> <i class="fas fa-pencil-alt text-fucsia"></i> {{category.name}}</a>
+                <a class="dropdown-item" [routerLink]="['/blog']"> <i class="fas fa-pencil-alt text-fucsia"></i> Todas las categorías</a>
+            </div>
+        </div>
+
+        <a href="" class="link-nav" routerLinkActive="active" routerLink="/videos">Videos</a>
+        <a href="" class="link-nav" routerLinkActive="active" routerLink="/contactame">Contactame</a>
+        <a href="" class="link-nav" routerLinkActive="active" routerLink="/testimonios">Testimonios</a>
+    </div>
+    <div>
+
+    </div>
+</div>
+<div class="space-navbar-absolute" *ngIf="!isRouteAdmin()"></div>
+<div class="nav-front-2" *ngIf="navbar2">
+    <div class="container2">
+        <div routerLink=" " class="logo-text-nav-2 cursor">
+            <h2 class="" style="">B. M.</h2>
+        </div>
+        <div class="links">
+            <a href="" class="link-nav hide-lg" routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
+            <a href="" class="link-nav  hide-lg" routerLinkActive="active" routerLink="/sobre-mi">Sobre mí</a>
+            <a href="" class="link-nav  hide-lg" routerLinkActive="active" routerLink="/servicios">Servicios</a>
+
+            <div class="dropdown">
+                <span class="link-nav hide-lg" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Blog <i style="font-size: 60%;" class="fas fa-caret-down"></i>
+              </span>
+                <div style="" class="dropdown-menu p-0" aria-labelledby="dropdownMenuButton">
+                    <a *ngFor="let category of categories" class="dropdown-item" [routerLink]="['/blog/categoria/'+category.slug]"> <i class="fas fa-pencil-alt text-fucsia"></i> {{category.name}}</a>
+                    <a class="dropdown-item" [routerLink]="['/blog']"> <i class="fas fa-pencil-alt text-fucsia"></i> Todas las categorías</a>
+                </div>
+            </div>
+            <a href="" class="link-nav  hide-lg" routerLinkActive="active" routerLink="/videos">Videos</a>
+
+            <a href="" class="link-nav  hide-lg" routerLinkActive="active" routerLink="/contactame">Contactame</a>
+            <a href="" class="link-nav hide-lg" routerLinkActive="active" routerLink="/testimonios">Testimonios</a>
+            <a href="" class="link-nav  hide-lg ml-2" routerLinkActive="active" routerLink="/testimonios"><i style="font-size: 80%;" class="fab fa-whatsapp"></i></a>
+
+            <a href="" class="link-nav ml-auto show-lg" routerLinkActive="active" routerLink="/testimonios"><i class="fab fa-instagram"></i></a>
+            <a href="" class="link-nav show-lg" routerLinkActive="active" routerLink="/testimonios"><i class="fab fa-facebook-square"></i></a>
+            <a href="" class="link-nav cursor  show-lg" routerLinkActive="active" routerLink="/testimonios"><i class="fab fa-whatsapp"></i></a>
+            <a data-toggle="modal" data-target="#modalMain" class="link-nav ml-auto menu-bars show-lg cursor" routerLinkActive="active" routerLink="/testimonios"> <i style="width: 100%;" class="fas fa-bars"></i> </a>
+        </div>
+    </div>
+</div>
+
+
+<!-- MODAL MAIL -->
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal right fade" id="modalMain" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content bg-blue-gradient-left">
+            <div class="modal-body">
+                <button type="button" class="close float-right" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                <h2 class="text-center text-white" style="text-shadow: 2px 2px var(--blue);">Menu</h2>
+
+                <div class="main-modal mt-5">
+                    <a href="" class="link-nav" routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
+                    <a href="" class="link-nav" routerLinkActive="active" routerLink="/sobre-mi">Sobre mí</a>
+                    <a href="" class="link-nav" routerLinkActive="active" routerLink="/servicios">Servicios</a>
+                    <div class="">
+                        <span (click)="categoryModalShow = !categoryModalShow" class="link-nav" type="button">
+                        Blog
+                        <i *ngIf="categoryModalShow" style="font-size: 60%;" class="fas fa-caret-up"></i>
+
+                        <i *ngIf="!categoryModalShow" style="font-size: 60%;" class="fas fa-caret-down"></i>
+                    </span>
+                        <div *ngIf="categoryModalShow" class="links-categories animate fadeIn">
+                            <a (click)="categoryModalShow = !categoryModalShow" data-toggle="modal" data-target="#modalMain" *ngFor="let category of categories" class="category-link" [routerLink]="['/blog/categoria/'+category.slug]"> <i class="fas fa-pencil-alt"></i> {{category.name}}</a>
+                            <a (click)="categoryModalShow = !categoryModalShow" data-toggle="modal" data-target="#modalMain" class="category-link" [routerLink]="['/blog']"> <i class="fas fa-pencil-alt"></i> Todas las categorías</a>
+                        </div>
+                    </div>
+
+                    <a href="" class="link-nav" routerLinkActive="active" routerLink="/videos">Videos</a>
+                    <a href="" class="link-nav" routerLinkActive="active" routerLink="/contactame">Contactame</a>
+                    <a href="" class="link-nav" routerLinkActive="active" routerLink="/testimonios">Testimonios</a>
+                </div>
+            </div>
+            <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div> -->
+        </div>
+    </div>
+</div>

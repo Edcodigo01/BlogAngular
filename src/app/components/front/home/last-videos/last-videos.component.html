@@ -1,0 +1,30 @@
+<div class="container2 pb-5">
+    <h1 class="title-fucsia mb-5">Videos</h1>
+    <swiper [config]="config" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()" class="mySwiper">
+        <ng-template swiperSlide *ngFor="let video of videos">
+
+            <div class="card cardVideo mb-5" style="height: 100%;max-width: 500px;">
+                <div class="card-header videoHover p-0 " *ngIf="!video.showVideo" (click)="showVideo(video.title)">
+                    <div class="container-circle-play">
+                        <div class="circle-play">
+                            <i class="fas fa-play icon-play"></i>
+                        </div>
+                    </div>
+                    <img src="https://img.youtube.com/vi/{{video.id_video}}/0.jpg" alt="">
+                    <div class="text">
+                        <h5 class="text-center">{{video.title}}</h5>
+                    </div>
+                </div>
+                <div class="card-header p-0" *ngIf="video.showVideo">
+                    <div class="loader-video" style="z-index:1">
+                        <div>
+                            <i class="fas fa-spinner fa-pulse"></i>
+                        </div>
+                    </div>
+                    <iframe style="z-index:2;position: relative;" id="video-iframe" [src]="urlSanitizer('https://www.youtube.com/embed/'+video.id_video)" allowfullscreen="allowfullscreen"></iframe>
+                </div>
+            </div>
+        </ng-template>
+    </swiper>
+    <br>
+</div>

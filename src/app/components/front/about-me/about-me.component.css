@@ -1,0 +1,11 @@
+.img-profile {
+    width: 580px;
+    float: right;
+    margin-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border: var(--fucsia-l) solid 6px;
+    border-radius: 10px;
+    border-bottom-right-radius: 70px;
+    border-top-left-radius: 70px;
+}
